@@ -7,7 +7,7 @@ sudo apt-get install -y \
   build-essential autoconf autotools-dev libtool libtool-bin checkinstall \
   swig python-dev python-twisted python-nose python-mock \
   libz-dev libssl-dev \
-  libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0 \
+  libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
   libfreetype6-dev libsigc++-1.2-dev  libfribidi-dev \
   libavahi-client-dev libjpeg-dev libgif-dev libsdl2-dev
 

@@ -4,7 +4,7 @@ set -ex
 whoami
 
 sudo apt-get install -y \
-  build-essential autoconf autotools-dev libtool libtool-bin checkinstall \
+  build-essential autoconf autotools-dev libtool libtool-bin checkinstall unzip \
   swig python-dev python-twisted python-nose python-mock \
   libz-dev libssl-dev \
   libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
@@ -67,6 +67,12 @@ fi
 make
 make install
 cd -
+
+if ! test -d skin-PLiHD-master; then
+    wget https://github.com/littlesat/skin-PLiHD/archive/master.zip -O skin-PLiHD-master.zip
+    unzip skin-PLiHD-master.zip
+fi
+cp -a skin-PLiHD-master/usr/share/enigma2/PLi-HD /opt/disk/usr/share/enigma2
 
 sudo ldconfig
 mkdir -p /opt/disk/etc

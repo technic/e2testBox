@@ -114,6 +114,8 @@ if ! test -d skin-PLiHD-master; then
     unzip skin-PLiHD-master.zip
 fi
 cp -a skin-PLiHD-master/usr/share/enigma2/PLi-HD /opt/disk/usr/share/enigma2
+cp -a skin-PLiHD-master/usr/share/enigma2/PLi-FullHD /opt/disk/usr/share/enigma2
+
 
 sudo ldconfig
 mkdir -p /opt/disk/etc

@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "pre-clean", type: "shell", inline: <<-SHELL
     sudo apt-get remove acpid lvm2 irqbalance at cron mdadm open-iscsi lxd snapd
-    sudo apt-get autoremove
+    sudo apt-get -y autoremove
     sudo systemctl disable accounts-daemon.service
     sudo systemctl disable polkitd.service
     sudo systemctl disable lxcfs.service

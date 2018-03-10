@@ -86,6 +86,8 @@ sudo checkinstall -y --pkgversion=$opkgVer
 cd -
 
 sudo install -D -m 644 /vagrant/provision/opkg.conf /usr/local/etc/opkg/opkg.conf
+sudo mkdir -p /opt/testdisk
+sudo chown $USER:$USER /opt/testdisk
 
 cd ~/src
 mkdir -p fakepkg

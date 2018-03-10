@@ -9,7 +9,7 @@ sudo apt-get install -y \
   libz-dev libssl-dev \
   libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
   gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-libav \
-  linux-image-extra-`uname -r` alsa alsamixer \
+  linux-image-extra-`uname -r` alsa alsa-utils gstreamer1.0-alsa \
   libfreetype6-dev libsigc++-1.2-dev  libfribidi-dev \
   libavahi-client-dev libjpeg-dev libgif-dev libsdl2-dev
 
@@ -70,6 +70,9 @@ make
 make install
 cd -
 
+mkdir -p /opt/disk/etc
+cp /usr/local/share/fonts/tuxtxt.ttf /opt/disk/usr/share/fonts
+
 
 sudo apt-get install -y libarchive-dev  libcurl4-openssl-dev libgpgme11-dev
 
@@ -86,6 +89,7 @@ make
 sudo checkinstall -y --pkgversion=$opkgVer
 cd -
 
+sudo ldconfig
 sudo install -D -m 644 /vagrant/provision/opkg.conf /usr/local/etc/opkg/opkg.conf
 sudo mkdir -p /opt/testdisk
 sudo chown $USER:$USER /opt/testdisk
@@ -118,9 +122,4 @@ if ! test -d skin-PLiHD-master; then
 fi
 cp -a skin-PLiHD-master/usr/share/enigma2/PLi-HD /opt/disk/usr/share/enigma2
 cp -a skin-PLiHD-master/usr/share/enigma2/PLi-FullHD /opt/disk/usr/share/enigma2
-
-
-sudo ldconfig
-mkdir -p /opt/disk/etc
-cp /usr/local/share/fonts/tuxtxt.ttf /opt/disk/usr/share/fonts
 

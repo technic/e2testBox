@@ -18,5 +18,5 @@ EOF
 apt-get update
 apt-get install -y \
   virtualbox-guest-x11 virtualbox-guest-dkms \
-  menu openbox xinit xterm gdb htop
+  menu openbox xinit xterm gdb htop rsync
 

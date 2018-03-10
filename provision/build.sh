@@ -8,7 +8,8 @@ sudo apt-get install -y \
   swig python-dev python-twisted python-nose python-mock \
   libz-dev libssl-dev \
   libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
-  gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
+  gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-libav \
+  linux-image-extra-`uname -r` alsa alsamixer \
   libfreetype6-dev libsigc++-1.2-dev  libfribidi-dev \
   libavahi-client-dev libjpeg-dev libgif-dev libsdl2-dev
 

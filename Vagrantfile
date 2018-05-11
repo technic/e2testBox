@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
     # Customize VirtualBox machine
     vb.memory = "1024"
     vb.customize ["modifyvm", :id, "--vram", "64", "--accelerate3d", "on", "--clipboard", "bidirectional"]
+    vb.customize ["modifyvm", :id, "--uartmode1", "disconnected" ]
   end
 
   config.vm.provision "pre-clean", type: "shell", inline: <<-SHELL

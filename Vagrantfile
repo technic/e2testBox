@@ -16,9 +16,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "setup", type: "shell", path: "provision/setup.sh"
-  config.vm.provision "cfg-fetch", type: "file", source: "provision/dotfiles", destination: "$HOME/"
-  config.vm.provision "cfg-install", type: "shell", privileged: false,
-    inline: "rsync -r -u -i -h /vagrant/provision/dotfiles/ $HOME && rm -r $HOME/dotfiles"
+  config.vm.provision "dotfiles", type: "shell", privileged: false,
+    inline: "rsync -r -u -i -h /vagrant/provision/dotfiles/ $HOME"
   config.vm.provision "build", type: "shell", privileged: false, path: "provision/build.sh"
 
 end

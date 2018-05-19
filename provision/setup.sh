@@ -3,6 +3,11 @@
 set -ex
 whoami
 
+# default ubuntu box is too heavy
+sudo apt-get -y remove --purge acpid lvm2 irqbalance mdadm open-iscsi lxd lxcfs snapd cloud-init
+sudo apt-get -y autoremove
+sudo systemctl disable accounts-daemon.service apparmor.service polkitd.service ufw.service
+
 # autologin
 
 user=$(id -nu 1000)

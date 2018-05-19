@@ -15,14 +15,6 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--uartmode1", "disconnected" ]
   end
 
-  config.vm.provision "pre-clean", type: "shell", inline: <<-SHELL
-    sudo apt-get remove acpid lvm2 irqbalance at cron mdadm open-iscsi lxd snapd
-    sudo apt-get -y autoremove
-    sudo systemctl disable accounts-daemon.service
-    sudo systemctl disable polkitd.service
-    sudo systemctl disable lxcfs.service
-  SHELL
-
   config.vm.provision "setup", type: "shell", path: "provision/setup.sh"
   config.vm.provision "cfg-fetch", type: "file", source: "provision/dotfiles", destination: "$HOME/"
   config.vm.provision "cfg-install", type: "shell", privileged: false,

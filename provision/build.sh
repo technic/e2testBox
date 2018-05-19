@@ -115,11 +115,11 @@ dpkg-deb -b fakepkg enigma2.deb
 opkg install enigma2.deb
 cd -
 
-
-if ! test -d skin-PLiHD-master; then
-    wget https://github.com/littlesat/skin-PLiHD/archive/master.zip -O skin-PLiHD-master.zip
-    unzip skin-PLiHD-master.zip
+rev="acac722e25a5e2d69d60d4df6bcef701049e2b38"
+if ! test -d "skin-PLiHD-$rev"; then
+    wget https://github.com/littlesat/skin-PLiHD/archive/$rev.zip -O skin-PLiHD-$rev.zip
+    unzip skin-PLiHD-$rev.zip
 fi
-cp -a skin-PLiHD-master/usr/share/enigma2/PLi-HD /opt/disk/usr/share/enigma2
-cp -a skin-PLiHD-master/usr/share/enigma2/PLi-FullHD /opt/disk/usr/share/enigma2
+cp -a skin-PLiHD-$rev/usr/share/enigma2/PLi-HD /opt/disk/usr/share/enigma2
+cp -a skin-PLiHD-$rev/usr/share/enigma2/PLi-FullHD /opt/disk/usr/share/enigma2
 

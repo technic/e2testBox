@@ -60,7 +60,7 @@ if test -d enigma2; then
   cd enigma2
   git pull
 else
-  git clone https://github.com/technic/enigma2.git
+  git clone --depth 10 https://github.com/technic/enigma2.git
   cd enigma2
 fi
 ./autogen.sh
